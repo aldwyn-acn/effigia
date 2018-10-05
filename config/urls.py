@@ -12,17 +12,17 @@ from apps.accounts.views import SettingsView
 urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('core.urls', namespace='core')),
-    url(r'^', include('apps.dashboard.urls', namespace='dashboard')),
+    url(r'^', include(('core.urls', 'core'), namespace='core')),
+    url(r'^', include(('apps.dashboard.urls', 'dashboard'), namespace='dashboard')),
     url(r'^update-profile$', ProfileUpdateView.as_view(), name='account_profile_edit'),
     url(r'^profile/(?P<slug>[\w\-]+)$', ProfileView.as_view(), name='account_profile'),
     url(r'^accounts/settings$', SettingsView.as_view(), name='account_settings'),
-    url(r'^chat/', include('apps.chats.urls', namespace='chat')),
-    url(r'^interaction/', include('apps.interactions.urls', namespace='interaction')),
-    url(r'^gallery/', include('apps.galleries.urls', namespace='gallery')),
-    url(r'^group/', include('apps.groups.urls', namespace='group')),
-    url(r'^portfolio/', include('apps.portfolios.urls', namespace='portfolio')),
-    url(r'^post/', include('apps.posts.urls', namespace='post')),
+    url(r'^chat/', include(('apps.chats.urls', 'chat'), namespace='chat')),
+    url(r'^interaction/', include(('apps.interactions.urls', 'interaction'), namespace='interaction')),
+    url(r'^gallery/', include(('apps.galleries.urls', 'gallery'), namespace='gallery')),
+    url(r'^group/', include(('apps.groups.urls', 'group'), namespace='group')),
+    url(r'^portfolio/', include(('apps.portfolios.urls', 'portfolio'), namespace='portfolio')),
+    url(r'^post/', include(('apps.posts.urls', 'post'), namespace='post')),
 ]
 
 

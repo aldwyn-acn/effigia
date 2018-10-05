@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth import get_user_model
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.shortcuts import render_to_response

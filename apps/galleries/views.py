@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.contenttypes.models import ContentType
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.db.models import Count
 from django.db.models import Q
 from django.views.generic import ListView
@@ -13,7 +13,6 @@ from django.views.generic import CreateView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
 
-from core.mixins import ObjectDeleteMixin
 from core.mixins import ObjectUpdateMixin
 from core.models import Category
 from ..interactions.forms import CommentForm
@@ -39,7 +38,6 @@ class BaseGalleryListView(GalleryListQuerySetMixin, ListView):
     def get_queryset(self):
         if self.request.GET.get('q'):
             qs = self.request.GET['q']
-            print qs
             return self.model.objects.filter(
                 Q(is_default=False),
                 Q(name__icontains=qs) |

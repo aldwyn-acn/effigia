@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from django.core.exceptions import ImproperlyConfigured
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 
 def get_env_variable(var_name):
@@ -46,7 +46,7 @@ INTERNAL_IPS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'wpadmin',
+    # 'wpadmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -206,20 +206,6 @@ DJANGO_ADMIN_PASS = get_env_variable('DJANGO_ADMIN_PASS')
 # ACTSTREAM_SETTINGS = {
 #     'MANAGER': 'core.managers.EffigiaActionManager'
 # }
-
-WPADMIN = {
-    'admin': {
-        'title': 'Datafeed',
-        'menu': {
-            'top': 'wpadmin.menu.menus.BasicTopMenu',
-            'left': 'wpadmin.menu.menus.BasicLeftMenu',
-        },
-        'dashboard': {
-            'breadcrumbs': True,
-        },
-        'custom_style': STATIC_URL + 'wpadmin/css/themes/sunrise.css',
-    }
-}
 
 # django-allauth
 ACCOUNT_SESSION_REMEMBER = False

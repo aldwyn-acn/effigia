@@ -11,8 +11,8 @@ from model_utils.models import TimeStampedModel
 
 
 class Like(TimeStampedModel):
-    liker = models.ForeignKey(get_user_model(), related_name='liked')
-    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    liker = models.ForeignKey(get_user_model(), related_name='liked', on_delete=models.DO_NOTHING)
+    content_type = models.ForeignKey(ContentType, on_delete=models.DO_NOTHING)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
 
@@ -31,7 +31,7 @@ class Like(TimeStampedModel):
 
 class Comment(TimeStampedModel):
     text = models.TextField()
-    created_by = models.ForeignKey(get_user_model(), related_name='comments')
+    created_by = models.ForeignKey(get_user_model(), related_name='comments', on_delete=models.DO_NOTHING)
     likes = GenericRelation(Like, related_query_name='comments')
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
