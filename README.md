@@ -12,7 +12,7 @@ Y8b.     888    888    888 Y88b 888 888 888  888 d8b Y88b.    Y88..88P 888  888 
                             "Y88P"                                                   
 ```
 
-[![Requirements Status](https://requires.io/github/aldwyn/effigia/requirements.svg?branch=master)](https://requires.io/github/aldwyn/effigia/requirements/?branch=master)
+[![Requirements Status](https://requires.io/github/aldwyn-acn/effigia/requirements.svg?branch=master)](https://requires.io/github/aldwyn-acn/effigia/requirements/?branch=master)
 
 # *effigia.com* - For Your Portfolios
 
